@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세기록</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>{{blog.date}}</h1>
+    작성자:{{blog.writer}}<br>
+    [상세내용]<br>
+    등판일:{{blog.date}}<br>
+    작성자:{{blog.writer}}<br>
+    이닝: {{blog.IP}}<br>
+    실점: {{blog.R}}<br>
+    삼진: {{blog.K}}<br>
+    피안타: {{blog.H}}<br>
+    사사구: {{blog.BB}}<br>
+    승: {{blog.W}}<br>
+    패: {{blog.L}}<br>
+    홀드: {{blog.HLD}}<br>
+    세이브: {{blog.SV}}<br>
+    <br>
+    <a href="{%url 'home' %}" class="btn">홈으로</a>
+</body>
+</html>

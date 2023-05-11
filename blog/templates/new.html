@@ -1,0 +1,18 @@
+<h1>기록을 입력하세요.</h1>
+
+<form action="{%url 'create'%}" method="post">
+    {%csrf_token%}
+    등판일:<input type="date" name="date"><br>
+    작성자:<input type="text" name="writer"><br>
+    이닝: <input type="number" step='0.1' min='0' name="IP"><br>
+    실점: <input type="number" min='0'name="R"><br>
+    삼진: <input type="number" min='0'name="K"><br>
+    피안타: <input type="number" min='0' name="H"><br>
+    사사구: <input type="number" min='0' name="BB"><br>
+    승: <input type="number" min='0' max='1' name="W"><br>
+    패: <input type="number" min='0' max='1' name="L"><br>
+    홀드: <input type="number" min='0' max='1' name="HLD"><br>
+    세이브: <input type="number" min='0' max='1' name="SV"><br>
+    <button type="submit">기록등록</button>
+    <a href="{%url 'home' %}" class="btn">홈으로</a>
+</form>

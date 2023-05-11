@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투수 출전일지</title>
+    <style>
+        body{text-align: center;}
+        th,td{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>투수 출전일지</h1><br>
+    등판일수 : {{blogs.count}}
+    <table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+    <th>등판일</th>
+    <th>승/패/홀드/세이브</th>
+    {% for blog in blogs %}
+    <tr>
+        <td>
+        {{blog.date}}
+        </td>
+        <td>
+        승:{{blog.W}}/패:{{blog.L}}/홀드:{{blog.HLD}}/세이브:{{blog.SV}}
+        </td>
+        <td>
+            <a href="{%url 'detail' blog.id%}">상세기록</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <a href="{%url 'new'%}">기록 추가</a>
+</body>
+</html>
