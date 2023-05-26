@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{%url 'update' blog.id%}" method="post">
+        {%csrf_token%}
+        등판일:<input type="date" name="date" value="{{blog.date}}"><br>
+        작성자:{{blog.writer}}<br>
+        이닝: <input type="number" step='0.1' min='0' name="IP" value="{{blog.IP}}"><br>
+        실점: <input type="number" min='0'name="R" value="{{blog.R}}"><br>
+        삼진: <input type="number" min='0'name="K" value="{{blog.K}}"><br>
+        피안타: <input type="number" min='0' name="H" value="{{blog.H}}"><br>
+        사사구: <input type="number" min='0' name="BB" value="{{blog.BB}}"><br>
+        승: <input type="number" min='0' max='1' name="W" value="{{blog.W}}"><br>
+        패: <input type="number" min='0' max='1' name="L" value="{{blog.L}}"><br>
+        홀드: <input type="number" min='0' max='1' name="HLD" value="{{blog.HLD}}"><br>
+        세이브: <input type="number" min='0' max='1' name="SV" value="{{blog.SV}}"><br>
+        <button type="submit">수정</button>
+        <a href="{%url 'detail' blog.id%}" class="btn">뒤로</a>
+    </form>
+{% endblock %}
